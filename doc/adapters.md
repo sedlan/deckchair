@@ -1,7 +1,7 @@
 Adapters
 ========
 
-Adapters expose a consistent interface to a persistent storage implementation. A `Lawnchair` build enqueues adapters and mixes in the first one valid for the current environment. This pattern is common in mobile scenarios, for example, a `Lawnchair` built with the DOM and Gears adapters will gracefully degrade through all available Android persistence solutions.
+Adapters expose a consistent interface to a persistent storage implementation. A `deckchair` build enqueues adapters and mixes in the first one valid for the current environment. This pattern is common in mobile scenarios, for example, a `deckchair` built with the DOM and Gears adapters will gracefully degrade through all available Android persistence solutions.
 
 <div class="codehilite">
     <table>
@@ -78,4 +78,4 @@ If you require an adapter thats not listed here it is trivial to implement your 
     nuke (callback)
     
 
-The tests ensure adapters are consistent no matter what the underlying store is. If you are writing an adapter check out `./tests/lawnchair-spec.js`. The memory adaptor is probably the simplest implementation to learn from. Note, all `Lawnchair` methods accept a callback as a last parameter. This is deliberate, most modern clientside storages only have async style interfaces, for a good reason, your code won't block the main thread aiding in the perception of performance. That callback will be scoped to the `Lawnchair` instance. Make use of `fn` and `lambda` methods to allow for terse callbacks. 
+The tests ensure adapters are consistent no matter what the underlying store is. If you are writing an adapter check out `./tests/deckchair-spec.js`. The memory adaptor is probably the simplest implementation to learn from. Note, all `deckchair` methods accept a callback as a last parameter. This is deliberate, most modern clientside storages only have async style interfaces, for a good reason, your code won't block the main thread aiding in the perception of performance. That callback will be scoped to the `deckchair` instance. Make use of `fn` and `lambda` methods to allow for terse callbacks. 

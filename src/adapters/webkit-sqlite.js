@@ -1,4 +1,4 @@
-Lawnchair.adapter('webkit-sqlite', (function () {
+deckchair.adapter('webkit-sqlite', (function () {
     // private methods 
     var fail = function (e, i) { console.log('error in sqlite adaptor!', e, i) }
     ,   now  = function () { return new Date() } // FIXME need to use better date fn

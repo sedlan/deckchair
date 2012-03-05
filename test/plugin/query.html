@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lawnchair Query Plugin Spec</title>
+	<title>deckchair Query Plugin Spec</title>
 	<link rel="stylesheet" href="../lib/qunit.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	
-	<script src="../lib/lawnchair.js"></script>
+	<script src="../lib/deckchair.js"></script>
 	<script src="../lib/qunit.js"></script>
     <script src="../lib/json2.js"></script>
-	<script src="../lib/lawnchair-query.js"></script>
+	<script src="../lib/deckchair-query.js"></script>
 	<script>
 		/*
         searching
@@ -31,7 +31,7 @@
         Movies.where('category === "scifi"').asc('rating').page(1, function(movie) { console.log(movie}))  
 		*/
 		
-		var store = new Lawnchair('test-plugins', function() { 
+		var store = new deckchair('test-plugins', function() { 
 			
 			var store = this
 
@@ -92,7 +92,7 @@
     </script>
 </head>
 <body>
-	<h1 id="qunit-header">Lawnchair Query Plugin Spec</h1>
+	<h1 id="qunit-header">deckchair Query Plugin Spec</h1>
     <h2 id="qunit-banner"></h2>
     <h2 id="qunit-userAgent"></h2>
     <ol id="qunit-tests"></ol>

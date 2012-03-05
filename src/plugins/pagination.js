@@ -1,5 +1,5 @@
 /*
-var p = new Lawnchair({name:'people', record:'person'}, function() {
+var p = new deckchair({name:'people', record:'person'}, function() {
  
     People = this
 
@@ -16,7 +16,7 @@ var p = new Lawnchair({name:'people', record:'person'}, function() {
 // chaining friendly
 p.page(1, 'console.log(page.people)').each('console.log(person)')
 */ 
-Lawnchair.plugin({
+deckchair.plugin({
 
     page: function (page, callback) {
         // some defaults

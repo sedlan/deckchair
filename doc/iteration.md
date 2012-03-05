@@ -1,11 +1,11 @@
 iteration
 ---
 
-Iterate the `Lawnchair` collection? Don't mind if I do!
+Iterate the `deckchair` collection? Don't mind if I do!
 
     
     :::JavaScript
-    Lawnchair(function(){
+    deckchair(function(){
         this.batch([{type:'beer'}, {type:'coffee'}], function() {
             // classic utility...
             this.each(function(record, index) { 

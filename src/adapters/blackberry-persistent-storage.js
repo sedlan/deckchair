@@ -5,11 +5,11 @@
  * - See http://www.github.com/phonegap/phonegap-blackberry
  *
  */
-Lawnchair.extend({
+deckchair.extend({
 	init:function() {
 		// Check for the existence of the phonegap blackberry persistent store API
 		if (!navigator.store)
-			throw('Lawnchair, "This browser does not support BlackBerry Persistent Storage; it is a PhoneGap-only implementation."');
+			throw('deckchair, "This browser does not support BlackBerry Persistent Storage; it is a PhoneGap-only implementation."');
 	},
 	get:function(key, callback) {
 		var that = this;

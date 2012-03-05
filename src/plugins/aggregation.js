@@ -1,6 +1,6 @@
-Lawnchair.plugin({
+deckchair.plugin({
     
-    // count of rows in the lawnchair collection with property
+    // count of rows in the deckchair collection with property
     count: function (property, callback) {
         // if only one arg we count the collection
         if ([].slice.call(arguments).length === 1) {

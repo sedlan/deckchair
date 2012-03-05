@@ -1,7 +1,7 @@
 application programming interface
 ===
 
-The `Lawnchair` api (or _application programming interface_):
+The `deckchair` api (or _application programming interface_):
 
     
     :::JavaScript

@@ -1,4 +1,4 @@
-module('Lawnchair construction/destruction', {
+module('deckchair construction/destruction', {
     setup:function() {
     },
     teardown:function() {
@@ -11,25 +11,25 @@ test('ctor requires callbacks in each form', function() {
 
     // raise exception if no ctor callback is supplied
     try {
-        var lc2 = new Lawnchair();    
+        var lc2 = new deckchair();    
     } catch(e) {
         ok(true, 'exception raised if no callback supplied to init');
     }
     try {
-        var lc3 = new Lawnchair({}, {});
+        var lc3 = new deckchair({}, {});
     } catch(e) {
         ok(true, 'exception raised if no callback supplied to init, but two args are present');
     }
     try {
-        var lc3 = new Lawnchair({});
+        var lc3 = new deckchair({});
     } catch(e) {
         ok(true, 'exception raised if no callback supplied to init, but one arg is present');
     }
 
-    var lc = new Lawnchair({name:store.name}, function(ref) {
+    var lc = new deckchair({name:store.name}, function(ref) {
         ok(true, 'should call passed in callback when using obj+function ctor form')
-        equals(this, ref, "lawnchair callback scoped to lawnchair instance")
-        equals(ref, this, "lawnchair passes self into callback too")
+        equals(this, ref, "deckchair callback scoped to deckchair instance")
+        equals(ref, this, "deckchair passes self into callback too")
         QUnit.start()
     });
 });
@@ -62,7 +62,7 @@ test('full callback syntax', function() {
         ok(true, 'calls callback');
         ok(r instanceof Array, 'should provide array as parameter');
         equals(r.length, 0, 'parameter should initially have zero length');
-        same(this, store, '"this" should be scoped to the lawnchair object inside callback');
+        same(this, store, '"this" should be scoped to the deckchair object inside callback');
         QUnit.start();
     });
 }) 
@@ -88,14 +88,14 @@ test( 'shorthand callback syntax', function() {
     QUnit.stop();
     QUnit.expect(2);
 
-    store.all('ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the Lawnchair instance"); QUnit.start();');
+    store.all('ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the deckchair instance"); QUnit.start();');
 
     // Is this test block necessary?
     //
-    // var tmp = new Lawnchair({name:'temps', record:'tmp'}, function(){
+    // var tmp = new deckchair({name:'temps', record:'tmp'}, function(){
     //     QUnit.start()
     //     var Temps = this;
-    //     equals(this, Temps, 'this is bound to Lawnchair')
+    //     equals(this, Temps, 'this is bound to deckchair')
     //     QUnit.stop()
     //     Temps.all('ok(temps, "this.name is passed to all callback"); QUnit.start()')
     // })
@@ -106,7 +106,7 @@ test('scoped variable in shorthand callback', function() {
     QUnit.stop();
 
     // FIXME fkn qunit being weird here... expect(1)
-    var tmp = new Lawnchair({name:'temps', record:'tmp'}, function() {
+    var tmp = new deckchair({name:'temps', record:'tmp'}, function() {
 		this.nuke(function() {
 			this.save({a:1}, function() {
 				this.each('ok(tmp, "this.record is passed to each callback"); QUnit.start()')
@@ -139,7 +139,7 @@ test( 'full callback syntax', function() {
 
     store.nuke(function() {
         ok(true, "should call callback in nuke");
-        same(this, store, '"this" should be scoped to the Lawnchair instance');
+        same(this, store, '"this" should be scoped to the deckchair instance');
         QUnit.start();
     });
 })
@@ -148,7 +148,7 @@ test( 'shorthand callback syntax', function() {
     QUnit.stop();
     QUnit.expect(2);
 
-    store.nuke('ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the Lawnchair instance"); QUnit.start();');
+    store.nuke('ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the deckchair instance"); QUnit.start();');
 })
 
 module('save()', {
@@ -186,7 +186,7 @@ test( 'shorthand callback syntax', function() {
     QUnit.stop();
     QUnit.expect(2);
 
-    store.save(me, 'ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the Lawnchair instance"); QUnit.start();');
+    store.save(me, 'ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the deckchair instance"); QUnit.start();');
 })
 
 test( 'saving objects', function() { 
@@ -251,7 +251,7 @@ test( 'full callback syntax', function() {
 
     store.batch([{j:'k'}], function() {
         ok(true, 'callback called with full syntax');
-        same(this, store, '"this" should be the LAwnchair instance');
+        same(this, store, '"this" should be the deckchair instance');
         QUnit.start();
     })
 })
@@ -260,7 +260,7 @@ test( 'shorthand callback syntax', function() {
     QUnit.stop(500);
     QUnit.expect(2);
 
-    store.batch([{o:'k'}], 'ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the Lawnchair instance"); QUnit.start();')
+    store.batch([{o:'k'}], 'ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the deckchair instance"); QUnit.start();')
 })
 
 module('get()', {
@@ -321,7 +321,7 @@ test( 'full callback syntax', function() {
 
     store.get('somekey', function(r){
         ok(true, 'callback got called');
-        same(this, store, '"this" should be teh Lawnchair instance');
+        same(this, store, '"this" should be teh deckchair instance');
         QUnit.start();
     });
 });
@@ -330,7 +330,7 @@ test('short callback syntax', function() {
     QUnit.stop();
     QUnit.expect(2);
 
-    store.get('somekey', 'ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the Lawnchair instance"); QUnit.start();');
+    store.get('somekey', 'ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the deckchair instance"); QUnit.start();');
 });
 
 module('remove()', {
@@ -366,7 +366,7 @@ test( 'full callback syntax', function() {
     store.save({key:'somekey', name:'something'}, function() {
         store.remove('somekey', function(r){
             ok(true, 'callback got called');
-            same(this, store, '"this" should be teh Lawnchair instance');
+            same(this, store, '"this" should be teh deckchair instance');
             QUnit.start();
         });
     });
@@ -377,7 +377,7 @@ test('short callback syntax', function() {
     QUnit.expect(2);
 
     store.save({key:'somekey', name:'something'}, function() {
-        store.remove('somekey', 'ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the Lawnchair instance"); QUnit.start();');
+        store.remove('somekey', 'ok(true, "shorthand syntax callback gets evaled"); same(this, store, "`this` should be scoped to the deckchair instance"); QUnit.start();');
     });
 });
 

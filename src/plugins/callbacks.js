@@ -1,5 +1,5 @@
 // I would mark my relationship with javascript as 'its complicated'
-Lawnchair.plugin((function(){
+deckchair.plugin((function(){
     
     // methods we want to augment with before/after callback registery capability 
     var methods = 'save batch get remove nuke'.split(' ')

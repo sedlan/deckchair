@@ -1,11 +1,11 @@
 Saving
 ======
 
-A `lawnchair` instance saves documents using the save method:
+A `deckchair` instance saves documents using the save method:
 
     
     :::JavaScript
-    new Lawnchair(function() {
+    new deckchair(function() {
         this.save({me:'brian'})
     })
     
@@ -14,7 +14,7 @@ A callback is, as always, your option:
 
     
     :::JavaScript
-    var ppl = Lawnchair(function() {
+    var ppl = deckchair(function() {
         
         // traditional callback code
         this.save({key:'config', options:[1,2,3]}, function(obj){

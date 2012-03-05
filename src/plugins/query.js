@@ -2,7 +2,7 @@
 // - simple query syntax 'its just javascript'
 // - simple string interpolation 
 // - search then sorting
-Lawnchair.plugin((function(){        
+deckchair.plugin((function(){        
     // 
     var interpolate = function(template, args) {
         var parts = template.split('?').filter(function(i) { return i != ''})

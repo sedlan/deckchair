@@ -1,4 +1,4 @@
-Lawnchair.adapter('memory', (function(){
+deckchair.adapter('memory', (function(){
 
     var storage = {}, index = []
 

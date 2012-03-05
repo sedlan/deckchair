@@ -4,7 +4,7 @@ Removal
 Deleting documents from the store is simple too.
 
     :::JavaScript
-    Lawnchair({name:'records'}, function() {
+    deckchair({name:'records'}, function() {
         
         // save a record
         this.save({key:1}, function() {

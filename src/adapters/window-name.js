@@ -1,5 +1,5 @@
 // window.name code courtesy Remy Sharp: http://24ways.org/2009/breaking-out-the-edges-of-the-browser
-Lawnchair.adapter('window-name', (function(index, store) {
+deckchair.adapter('window-name', (function(index, store) {
 
     var data = window.top.name ? JSON.parse(window.top.name) : {}
 

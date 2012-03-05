@@ -1,11 +1,11 @@
 init
 ---
 
-You have many options for kicking up a lawnchair.
+You have many options for kicking up a deckchair.
 
     
     :::JavaScript
-    new Lawnchair(function() {
+    new deckchair(function() {
         // Default params: records and record in terse callbacks
     })
     
@@ -15,7 +15,7 @@ we want to setup our own parameter names for terse callbacks
 
     
     :::JavaScript
-    var ppl = Lawnchair({name:'people', record:'person'}, function(people){
+    var ppl = deckchair({name:'people', record:'person'}, function(people){
         
         // Something to save...
         var me = {name:'brian'}
@@ -39,5 +39,5 @@ we want to setup our own parameter names for terse callbacks
     })
     
 
-As you can see, `lawnchair` gives you plenty of methods for accessing
+As you can see, `deckchair` gives you plenty of methods for accessing
 the persisted data in a very javascript closure and callback world friendly manner. 

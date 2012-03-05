@@ -1,7 +1,7 @@
 Plugins
 ===
 
-The `Lawnchair` deals in collections of json documents. Plugins augment lawnchair collections with particular behaviors. If you'd like to create a plugin there are some great ideas listed in the roadmap. ;)
+The `deckchair` deals in collections of json documents. Plugins augment deckchair collections with particular behaviors. If you'd like to create a plugin there are some great ideas listed in the roadmap. ;)
 
 Aggregation
 ---
@@ -11,7 +11,7 @@ in handy.
 
     
     :::JavaScript
-    Lawnchair(function() {
+    deckchair(function() {
         // sum on a property
         this.sum('transactions', 'console.log(sum)')
 
@@ -29,12 +29,12 @@ in handy.
 Callbacks
 ---
 
-Callbacks augment the `Lawnchair` api with `before` and `after` events.
+Callbacks augment the `deckchair` api with `before` and `after` events.
 Great for validations or conditional behavior.
 
     
     :::JavaScript
-    Lawnchair(function() {
+    deckchair(function() {
         
         // setup some callbacks
         this.before('save', 'console.log("about to save " + record.name)')
@@ -54,7 +54,7 @@ sex loves the word _paginate_. Gets 'em every time.
 
     
     :::JavaScript
-	var p = new Lawnchair({name:'people', record:'person'}, function() {
+	var p = new deckchair({name:'people', record:'person'}, function() {
 
 		this.page(2, function (page) {
 			this.each('console.log(person)')
@@ -76,7 +76,7 @@ JavaScript syntax for accessing data.
 
     
     :::JavaScript
-    Lawnchair(function() {
+    deckchair(function() {
         
         // basic searching
         this.where('record.name === "brian"', 'console.log(records)') 

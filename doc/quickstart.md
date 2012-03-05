@@ -1,10 +1,10 @@
 Quickstart
 ----------
 
-Getting started with `lawnchair` is super easy:
+Getting started with `deckchair` is super easy:
 
-1. Include the `lawnchair` js file in your html document.
-2. Instantiate a `lawnchair` (you can have as many as you want).
+1. Include the `deckchair` js file in your html document.
+2. Instantiate a `deckchair` (you can have as many as you want).
 3. There is no step 3! you can start persisting data clientside!
 
 Figure 1: index.html
@@ -16,7 +16,7 @@ Figure 1: index.html
         <title>my osim app</theitle>
     </head>
     <body>
-        <script src="lawnchair.js"></script>
+        <script src="deckchair.js"></script>
         <script src="app.js"></script>
     </body>
     </html>
@@ -26,7 +26,7 @@ Figure 2: app.js
 
     
     :::JavaScript
-    Lawnchair(function(){
+    deckchair(function(){
         this.save({msg:'hooray!'})
     })
     

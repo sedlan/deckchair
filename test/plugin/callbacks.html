@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lawnchair Callbacks Plugin Spec</title>
+	<title>deckchair Callbacks Plugin Spec</title>
 
 	<link rel="stylesheet" href="../lib/qunit.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
-	<script src="../lib/lawnchair.js"></script>
+	<script src="../lib/deckchair.js"></script>
 	<script src="../lib/qunit.js"></script>
     <script src="../lib/json2.js"></script>
-	<script src="../lib/lawnchair-callbacks.js"></script>
+	<script src="../lib/deckchair-callbacks.js"></script>
     <script>
-        var store = new Lawnchair('test-plugins', function() { 
+        var store = new deckchair('test-plugins', function() { 
             
             var store = this
             ,   methods = 'save batch get remove nuke'.split(' ')
@@ -38,18 +38,18 @@
                 store.before('save', function(r) {
                     start()
                     equals(r, record, 'record same as record to be saved')
-                    equals(this, store, 'this in before callback scoped to the lawnchair')
+                    equals(this, store, 'this in before callback scoped to the deckchair')
                 })
                 
                 store.after('save', function(r) {
                     ok(r.key, 'after saved record has key in callback')
-                    equals(this, store, 'this in after callback scoped to the lawnchair')
+                    equals(this, store, 'this in after callback scoped to the deckchair')
                 })
 
                 store.save(record, function(r) {
                     ok(r.key, 'saved record has key in callback')
                     ok(true, 'save callback invoked')
-                    equals(this, store, 'this in save callback scoped to the lawnchair')
+                    equals(this, store, 'this in save callback scoped to the deckchair')
                 })
             })
 
@@ -65,7 +65,7 @@
                 store.before('batch', function(r) {
                     start()
                     equals(r, record, 'record same as record to be saved')
-                    equals(this, store, 'this in before callback scoped to the lawnchair')
+                    equals(this, store, 'this in before callback scoped to the deckchair')
                 })
 
                 stop()
@@ -74,7 +74,7 @@
                     console.log(r)
                     start()
                     ok(r[0].key, 'after saved record has key in callback')
-                    equals(this, store, 'this in after callback scoped to the lawnchair')
+                    equals(this, store, 'this in after callback scoped to the deckchair')
                 })
 
                 stop()
@@ -83,7 +83,7 @@
                     start()
                     ok(r[0].key, 'saved record has key in callback')
                     ok(true, 'save callback invoked')
-                    equals(this, store, 'this in save callback scoped to the lawnchair')
+                    equals(this, store, 'this in save callback scoped to the deckchair')
                 })
             })
             
@@ -100,18 +100,18 @@
                 store.before('get', function(key) {
                     start()
                     equals(key, record.key, 'record same as record to be retrieved')
-                    equals(this, store, 'this in before callback scoped to the lawnchair')
+                    equals(this, store, 'this in before callback scoped to the deckchair')
                 })
                 
                 store.after('get', function(r) {
                     equals(r.key, record.key, 'after saved record has same key in callback')
-                    equals(this, store, 'this in after callback scoped to the lawnchair')
+                    equals(this, store, 'this in after callback scoped to the deckchair')
                 })
                 store.save(record, function() {
                     store.get('test-get', function(r) {
                         equals(r.key, record.key, 'get record has same key in callback')
                         ok(true, 'get callback invoked')
-                        equals(this, store, 'this in get callback scoped to the lawnchair')
+                        equals(this, store, 'this in get callback scoped to the deckchair')
                     })
                 })
             })
@@ -126,17 +126,17 @@
                 store.before('remove', function(obj) {
                     start()
                     equals(obj, record, 'record same as record to be removed')
-                    equals(this, store, 'this in before callback scoped to the lawnchair')
+                    equals(this, store, 'this in before callback scoped to the deckchair')
                 })
                 
                 store.after('remove', function() {
                     ok(true, 'removed record after callback')
-                    equals(this, store, 'this in after callback scoped to the lawnchair')
+                    equals(this, store, 'this in after callback scoped to the deckchair')
                 })
                 store.save(record, function() {
                     store.remove(record, function() {
                         ok(true, 'remove callback invoked')
-                        equals(this, store, 'this in remove callback scoped to the lawnchair')
+                        equals(this, store, 'this in remove callback scoped to the deckchair')
                     })
                 })
             })
@@ -149,17 +149,17 @@
                 store.before('nuke', function() {
                     start()
                     ok(true, 'before nuke invoked')
-                    equals(this, store, 'this in before callback scoped to the lawnchair')
+                    equals(this, store, 'this in before callback scoped to the deckchair')
                 })
                 
                 store.after('nuke', function() {
                     ok(true, 'after nuke callback invoked')
-                    equals(this, store, 'this in after callback scoped to the lawnchair')
+                    equals(this, store, 'this in after callback scoped to the deckchair')
                 })
 
                 store.nuke(function() {
                     ok(true, 'nuke callback invoked')
-                    equals(this, store, 'this in remove callback scoped to the lawnchair')
+                    equals(this, store, 'this in remove callback scoped to the deckchair')
                 })
             })
         //-- 
@@ -167,7 +167,7 @@
     </script>
 </head>
 <body>
-	<h1 id="qunit-header">Lawnchair Callbacks Plugin Spec</h1>
+	<h1 id="qunit-header">deckchair Callbacks Plugin Spec</h1>
     <h2 id="qunit-banner"></h2>
     <h2 id="qunit-userAgent"></h2>
     <ol id="qunit-tests"></ol>
